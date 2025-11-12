@@ -1,1 +1,13 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Trykker&display=swap");
+
+@theme {
+  --color-BLUE: #003e7c;
+  --color-WHITE: #f1f6f9;
+  --color-LIGHTGRAY: #bbbfca;
+  --color-DARKGRAY: #394867;
+
+  --font-OLD_STANDARD: "Old Standard TT", serif; /* HEADING Font */
+  --font-MARTEL_SANS: "Martel Sans", sans-serif; /* paragraph Font */
+  --font-TRYKKER: "Trykker", serif; /* sub-heaading Font */
+}
