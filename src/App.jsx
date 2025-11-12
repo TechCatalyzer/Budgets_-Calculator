@@ -1,9 +1,7 @@
-import { Main } from './components/calculator'
-import React from 'react'
-function App() {
-  return (
-    <div><Main/></div>
-  )
+import JourneyDetails from "./components/JourneyDetails";
 
-}
-export default App
+const App = () => {
+  return <JourneyDetails />;
+};
+
+export default App;
