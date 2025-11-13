@@ -4,6 +4,7 @@ import SelectInput from "./SelectInput";
 import TextArea from "./TextAreaInput";
 import Button from "./Buttons";
 import Headers from "./Headers";
+import countryRates from "./Country";
 
 
 const JourneyDetails = () => {
@@ -18,8 +19,8 @@ const JourneyDetails = () => {
     "Deputy Directors",
     "Officers",
   ];
+  const countries = Object.keys(countryRates);
 
-  const countries = ["United States", "Canada", "United Kingdom", "Australia"];
   return (
     <div className="min-h-screen bg-BLUE flex flex-col items-center justify-start py-10">
       <Header />
@@ -53,23 +54,26 @@ const JourneyDetails = () => {
         </div>
 
         <div>
-          <SelectInput label={"Departure Country"} options={countries} />
+          <SelectInput label={"Departure Country"} options={countries}
+          />
         </div>
 
         <div>
-          <SelectInput label={"Destination Country"} options={countries} />
+          <SelectInput label={"Destination Country"} options={countries} 
+             />
         </div>
 
         <div>
-          <Input label={" Per Diem rate for Destination Coutry"} placeholder={"0"} />
+          <Input label={" Per Diem rate for Destination Coutry"} placeholder={"0"}
+          readOnly />
         </div>
 
         <div>
-          <Input label={"Departure Date & Time"} placeholder={" "} />
+          <Input label={"Departure Date & Time"} input_type="datetime-local" />
         </div>
 
         <div>
-          <Input label={"Arrival Date & Time"} placeholder={" "} />
+          <Input label={"Arrival Date & Time"} input_type= "datetime-local" />
         </div>
 
         {/*Return Journey*/}
@@ -91,11 +95,11 @@ const JourneyDetails = () => {
         </div>
 
         <div>
-          <Input label={"Return Departure Date & Time"} placeholder={" "} />
+          <Input label={"Return Departure Date & Time"} input_type="datetime-local" />
         </div>
 
         <div>
-          <Input label={"Return Arrival Date & Time"} placeholder={" "} />
+          <Input label={"Return Arrival Date & Time"} input_type="datetime-local" />
         </div>
 
         {/*Add another Return Route*/}
@@ -115,5 +119,6 @@ const JourneyDetails = () => {
   
   );
 };
+
 
 export default JourneyDetails;

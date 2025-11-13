@@ -1,11 +1,16 @@
-const SelectInput = ({ label, options }) => {
+const SelectInput = ({ label, value, onChange, options }) => {
   return (
     <div className="mb-6">
-      <label className="block text-gray-700 font-medium mb-2">{label}</label>
+      <label className=" font-medium mb-2">{label}</label>
       <select className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-[#003366] focus:outline-none">
-        {options.map((option, index) => {
-          return <option key={index}>{option}</option>;
-        })}
+        value={value}
+        onChange={onChange}
+       <option value="">Select</option>
+        {options.map((opt, idx) => (
+          <option key={idx} value={opt}>
+            {opt}
+          </option>
+        ))}
       </select>
     </div>
   );
