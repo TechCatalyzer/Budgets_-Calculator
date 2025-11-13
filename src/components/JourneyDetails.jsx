@@ -2,11 +2,14 @@ import Header from "./Header";
 import Input from "./Input";
 import SelectInput from "./SelectInput";
 import TextArea from "./TextAreaInput";
+import Button from "./Buttons";
+import Headers from "./Headers";
 
 
 const JourneyDetails = () => {
   const source = ["Government of Zimbabwe", "External Entity (Non-Government)", ];
   const grades = [
+    "Select Grade",
     "Ministers and Deputy Ministers",
     "Accounting Officers",
     "Accounting Officers (Non-Accounting)",
@@ -45,6 +48,9 @@ const JourneyDetails = () => {
         </div>
 
         {/*Outbound Journey*/}
+        <div>
+          <Headers h3  ={"Outbound Journey"} />
+        </div>
 
         <div>
           <SelectInput label={"Departure Country"} options={countries} />
@@ -67,6 +73,10 @@ const JourneyDetails = () => {
         </div>
 
         {/*Return Journey*/}
+
+        <div>
+          <Headers h3  ={"Return Journey"} />
+        </div>
 
         <div>
           <SelectInput label={"Return Departure Country"} options={countries} />
@@ -93,8 +103,16 @@ const JourneyDetails = () => {
         <div>
           <SelectInput label={"Funding Source"} options={source} />
         </div>
-      </div>
+
+    <div className="w- 1/2 flex gap-8">
+      <Button label="Calculate" variant="primary" />
+      <Button label="Reset"  variant="secondary" />
     </div>
+
+        </div>
+
+      </div>
+  
   );
 };
 
