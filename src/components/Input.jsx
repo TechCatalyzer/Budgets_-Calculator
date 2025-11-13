@@ -1,6 +1,6 @@
 const Input = ({ label, placeholder }) => {
   return (
-    <div className="w-1/2 mb-6">
+    <div>
       <label className="block text-gray-700 font-medium mb-2">{label}</label>
       <input
         type="text"
