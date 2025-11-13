@@ -1,7 +1,7 @@
-const Input = ({ label, placeholder, input_type}) => {
+const TextInput = ({ label, placeholder, input_type }) => {
   return (
     <div>
-      <label className="block text-DARKGRAY-xl font-medium mb-2">{label}{input_type}</label>
+      <label className="block text-DARKGRAY-xl font-medium mb-2">{label}</label>
       <input
         type={input_type}
         placeholder={placeholder}
@@ -11,4 +11,4 @@ const Input = ({ label, placeholder, input_type}) => {
   );
 };
 
-export default Input;
+export default TextInput;
