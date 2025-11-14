@@ -4,7 +4,9 @@ import SelectInput from "./SelectInput";
 import TextArea from "./TextAreaInput";
 import Button from "./Buttons";
 import Headers from "./Headers";
-import countryRates from "./Country";
+import countryRates from "../data/Country";
+
+import { useState } from "react";
 
 const JourneyDetails = () => {
   const source = ["Government of Zimbabwe", "External Entity (Non-Government)"];
@@ -19,6 +21,17 @@ const JourneyDetails = () => {
     "Officers",
   ];
   const countries = Object.keys(countryRates);
+
+  const [destinationOutBound, setDestinationOutBound] = useState("");
+  const [returnDestination, setReturnDestination] = useState("");
+
+  const changeDestinationOutBound = (e) => {
+    setDestinationOutBound(e.target.value);
+  };
+
+  const changeReturnDestination = (e) => {
+    setReturnDestination(e.target.value);
+  };
 
   const handeleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +55,11 @@ const JourneyDetails = () => {
             </div>
           </div>
           <div>
-            <SelectInput label={"Select Grade"} options={grades} />
+            <SelectInput
+              label={"Select Grade"}
+              options={grades}
+              name={"grades"}
+            />
           </div>
 
           <div>
@@ -58,18 +75,30 @@ const JourneyDetails = () => {
           </div>
 
           <div>
-            <SelectInput label={"Departure Country"} options={countries} />
+            <SelectInput
+              label={"Departure Country"}
+              options={countries}
+              name={"departureCountry"}
+            />
           </div>
 
           <div>
-            <SelectInput label={"Destination Country"} options={countries} />
+            <SelectInput
+              label={"Destination Country"}
+              options={countries}
+              name={"destinationCountry"}
+              onChange={changeDestinationOutBound}
+            />
           </div>
 
           <div>
             <TextInput
               label={" Per Diem rate for Destination Coutry"}
-              placeholder={"0"}
+              placeholder={"Select Destination Country First"}
               readOnly
+              value={
+                destinationOutBound ? countryRates[destinationOutBound] : ""
+              }
             />
           </div>
 
@@ -104,13 +133,17 @@ const JourneyDetails = () => {
             <SelectInput
               label={"Return Destination Country"}
               options={countries}
+              value={returnDestination}
+              onChange={changeReturnDestination}
             />
           </div>
 
           <div>
             <TextInput
               label={"Per Diem rate for Destination Coutry"}
-              placeholder={"0"}
+              placeholder={"Select Destination Country First"}
+              readOnly
+              value={returnDestination ? countryRates[returnDestination] : ""}
             />
           </div>
 
