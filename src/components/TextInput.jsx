@@ -1,4 +1,6 @@
+
 const TextInput = ({ label, placeholder, input_type, value, onChange }) => {
+  
   return (
     <div>
       <label className="block text-DARKGRAY-xl font-medium mb-2">{label}</label>
