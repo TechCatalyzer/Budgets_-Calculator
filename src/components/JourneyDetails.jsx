@@ -36,6 +36,10 @@ const JourneyDetails = () => {
   const handeleSubmit = (e) => {
     e.preventDefault();
   };
+  const resetForm = () => {
+    setDestinationOutBound("");
+    setReturnDestination("");
+  };
 
   return (
     <div className="min-h-screen bg-BLUE flex flex-col items-center justify-start py-10">
@@ -169,7 +173,7 @@ const JourneyDetails = () => {
 
           <div className="w- 1/2 flex gap-8">
             <Button label="Calculate" variant="primary" />
-            <Button label="Reset" variant="secondary" />
+            <Button label="Reset" variant="secondary" onClick={resetForm} />
           </div>
         </form>
       </div>
