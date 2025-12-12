@@ -1,8 +1,20 @@
 {
   "name": "budgets--calculator",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "homepage": "https://github.com/TechCatalyzer/Budgets_-Calculator#readme",
+  "bugs": {
+    "url": "https://github.com/TechCatalyzer/Budgets_-Calculator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://%3CYOUR_GITHUB_USERNAME%3E@github.com/TechCatalyzer/Budgets_-Calculator.git"
+  },
+  "license": "ISC",
+  "author": "Tawa-Dev",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,8 +23,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
+    "express": "^5.2.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.10.1",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
