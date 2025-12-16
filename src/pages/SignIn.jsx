@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import TextInput from "./TextInput";
-import Headers from "./Headers";
-import Buttons from "./Buttons";
-import LeftSidePanel from "./LeftSidePanel";
+import TextInput from "../components/TextInput";
+import Headers from "../components/Headers";
+import Buttons from "../components/Buttons";
+import LeftSidePanel from "../components/LeftSidePanel";
 import { Link } from "react-router-dom";
 
 const SignIn = () => {

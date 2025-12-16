@@ -1,4 +1,4 @@
-const Buttons = ({ label, onClick, type = "button" }) => {
+const Buttons = ({ label, onClick, type}) => {
   return (
     <div className={"w-full p-3 gap-8"}>
       <button

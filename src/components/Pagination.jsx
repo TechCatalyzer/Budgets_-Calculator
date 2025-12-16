@@ -1,9 +1,10 @@
-const Pagination = ({ step, setStep, totalSteps }) => {
+const Pagination = ({ step, setStep, totalSteps = 4 }) => {
   return (
     <div className="flex justify-center items-center gap-4 mt-8 text-lg font-semibold">
-     
+      
       {/* Previous Button */}
       <button
+        type="button"
         onClick={() => step > 1 && setStep(step - 1)}
         className={`px-3 py-1 rounded ${
           step > 1
@@ -15,11 +16,12 @@ const Pagination = ({ step, setStep, totalSteps }) => {
       </button>
 
       {/* Page Numbers */}
-      {[...Array(totalSteps)].map((index) => {
+      {[...Array(totalSteps)].map((_, index) => {
         const num = index + 1;
         return (
           <button
             key={num}
+            type="button"
             onClick={() => setStep(num)}
             className={`px-3 py-1 rounded transition-all ${
               step === num
@@ -34,6 +36,7 @@ const Pagination = ({ step, setStep, totalSteps }) => {
 
       {/* Next Button */}
       <button
+        type="button"
         onClick={() => step < totalSteps && setStep(step + 1)}
         className={`px-3 py-1 rounded ${
           step < totalSteps

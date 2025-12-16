@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import TextInput from "./TextInput";
-import Headers from "./Headers";
-import Buttons from "./Buttons";
+import TextInput from "../components/TextInput";
+import Headers from "../components/Headers";
+import Buttons from "../components/Buttons";
 import { useState } from "react";
-import LeftSidePanel from "./LeftSidePanel";
+import LeftSidePanel from "../components/LeftSidePanel";
 
 const SignUp = () => {
   const handleSubmit = (e) => e.preventDefault();
